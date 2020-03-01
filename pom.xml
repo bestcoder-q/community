@@ -50,6 +50,10 @@
             <version>1.4.200</version>
             <scope>test</scope>
         </dependency>-->
+        <!-- <dependency>-->
+        <!-- <groupId>com.h2database</groupId>-->
+        <!-- <artifactId>h2</artifactId>-->
+        <!-- </dependency>-->
         <!--mysql-->
         <dependency>
             <groupId>mysql</groupId>
@@ -79,10 +83,20 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!--@Data注解的使用-->
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.4</version>
+            <scope>provided</scope>
         </dependency>
+        <!--热部署-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-devtools</artifactId>-->
+<!--            <optional>true</optional>-->
+<!--        </dependency>-->
+
     </dependencies>
 
     <build>
@@ -102,6 +116,18 @@
                     <user>root</user>
                     <password>root</password>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <version>5.1.6</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.4.0</version>
                 <dependencies>
                     <dependency>
                         <groupId>mysql</groupId>
